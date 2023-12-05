@@ -34,11 +34,13 @@ function updateBatteryStatus(battery) {
 function changeImage(battery) {
     // Declare img element
     const image = document.createElement("img");
+
     // Set id for query selector
     image.id = "robohashImage"
 
-    // // Removes the image child if it is present
-    // body.removeChild(robohashImage);
+    // Removes the image child if it is present
+    if (body.contains(robohashImage))
+        body.removeChild(robohashImage);
 
     // Create the full URL with the battery level
     url = `${baseURl}${battery.level * 100}`;
